@@ -9,6 +9,7 @@ Realtime chat (single chat room, many-many communication only)
   
 ## Missing
 - Tests
+- Error messages to user
 - Persistance
 - Authentication & authorization
 - Refacoring
