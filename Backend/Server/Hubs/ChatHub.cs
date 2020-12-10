@@ -46,15 +46,11 @@ namespace Server.Hubs
         public async Task SendMessage(string message)
         {
             var callingUser = _chatService.GetUser(Context.ConnectionId);
-            if (callingUser == null)
-                throw new Exception();
-
             var m = new
             {
                 MessageContent = message,
                 Username = callingUser.Username
             };
-
             await Clients.Group(defaultGroup).SendAsync("ReceiveMessage", m);
         }
 
