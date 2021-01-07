@@ -32,7 +32,10 @@ namespace Server.Services
 
         internal User GetUser(string connectionId)
         {
-            return _repo.GetUser(connectionId);
+            var user = _repo.GetUser(connectionId);
+            if (user == null)
+                throw new Exception();
+            return user;
         }
     }
 }
